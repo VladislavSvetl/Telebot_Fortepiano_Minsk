@@ -21,7 +21,7 @@ def db(item1=None, item2=None, item3=None, item4=None):
 def main_menu():
     markup = types.InlineKeyboardMarkup(row_width=3)
     markup_1 = types.InlineKeyboardButton(text='👨🏼‍💻 Информация обо мне', callback_data='1')
-    markup_2 = types.InlineKeyboardButton(text='✅ Записаться на бессплатное занятие', callback_data='2')
+    markup_2 = types.InlineKeyboardButton(text='✅ Записаться на бесплатное занятие', callback_data='2')
     markup_3 = types.InlineKeyboardButton(text='🙋‍♂ Контакты', callback_data='3')
     markup_4 = types.InlineKeyboardButton(text='💲 Стоимость', callback_data='5')
     markup.add(markup_1, markup_3, markup_4, markup_2)
@@ -73,8 +73,8 @@ def info(message):
     markup = types.InlineKeyboardMarkup(row_width=1)
     markup_1 = types.InlineKeyboardButton(text='Больше информации на сайте 🔝', url='https://fortepiano-minsk.by')
     markup_2 = types.InlineKeyboardButton(text='🔙 Главное меню', callback_data='main')
-    markup_3 = types.InlineKeyboardButton(text='✅ Записаться на бессплатное занятие', callback_data='2')
-    markup.add(markup_3, markup_2)
+    markup_3 = types.InlineKeyboardButton(text='✅ Записаться на бесплатное занятие', callback_data='2')
+    markup.add(markup_1, markup_3, markup_2)
     bot.send_photo(message.chat.id, 'https://sun9-39.userapi.com/impf/c628119/v628119662/3001a/sZ-9SxRVh6A.jpg?size=1280x922&quality=96&sign=ed366ee111cff82a9a6ab20593f0ba60&type=album')
     time.sleep(2.0)
     bot.send_message(message.chat.id, '👩🏻 <b>Давайте познакомимся!</b> 👩🏻\n'
@@ -130,10 +130,10 @@ def price(message):
 def contacts(message):
     back = back_main()
     markup = types.InlineKeyboardMarkup(row_width=3)
-    markup_1 = types.InlineKeyboardButton(text='Instagram', url='https://www.instagram.com/dashspv/')
+    markup_1 = types.InlineKeyboardButton(text='Instagram', url='https://www.instagram.com/fortepiano_minsk/')
     markup_2 = types.InlineKeyboardButton(text='Вконтакте', url='https://vk.com/id184760662')
     markup_3 = types.InlineKeyboardButton(text='Website', url='https://fortepiano-minsk.by')
-    markup.add(markup_1, markup_2)
+    markup.add(markup_1, markup_2, markup_3)
     bot.send_message(message.chat.id, 'Связаться со мной можно любым удобным для Вас способом', reply_markup=markup)
     time.sleep(3.0)
     bot.send_contact(message.chat.id, '+375297135563', 'Дарья', reply_markup=back)
@@ -230,4 +230,3 @@ def callback(call):
 
 if __name__ == '__main__':
     bot.polling(none_stop=True)
-
