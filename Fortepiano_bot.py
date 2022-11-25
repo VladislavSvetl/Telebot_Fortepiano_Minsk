@@ -20,7 +20,7 @@ def db(item1=None, item2=None, item3=None, item4=None):
 
 def main_menu():
     markup = types.InlineKeyboardMarkup(row_width=3)
-    markup_1 = types.InlineKeyboardButton(text='👨🏼‍💻 Информация обо мн', callback_data='1')
+    markup_1 = types.InlineKeyboardButton(text='👨🏼‍💻 Информация обо мне', callback_data='1')
     markup_2 = types.InlineKeyboardButton(text='✅ Записаться на бесплатное занятие', callback_data='2')
     markup_3 = types.InlineKeyboardButton(text='🙋‍♂ Контакты', callback_data='3')
     markup_4 = types.InlineKeyboardButton(text='💲 Стоимость', callback_data='5')
