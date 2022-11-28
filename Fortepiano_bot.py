@@ -123,7 +123,7 @@ def price(message):
     time.sleep(2.0)
     bot.send_photo(message.chat.id, 'https://disk.yandex.ru/i/5FTizhyqmbCICw')
     time.sleep(2.0)
-    bot.send_photo(message.chat.id, 'https://static.orgpage.ru/newsphotos/ab/ab89359f94b04702a97e1621a77d35b6.jpg', reply_markup=markup)
+    bot.send_photo(message.chat.id, 'https://disk.yandex.ru/i/N84pyje5-nmu2Q', reply_markup=markup)
 
 
 @bot.message_handler()
