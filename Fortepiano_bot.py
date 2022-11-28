@@ -75,7 +75,7 @@ def info(message):
     markup_2 = types.InlineKeyboardButton(text='🔙 Главное меню', callback_data='main')
     markup_3 = types.InlineKeyboardButton(text='✅ Записаться на бесплатное занятие', callback_data='2')
     markup.add(markup_1, markup_3, markup_2)
-    bot.send_photo(message.chat.id, 'https://sun9-39.userapi.com/impf/c628119/v628119662/3001a/sZ-9SxRVh6A.jpg?size=1280x922&quality=96&sign=ed366ee111cff82a9a6ab20593f0ba60&type=album')
+    bot.send_photo(message.chat.id, 'https://disk.yandex.ru/i/4keBszBvEmxjzw')
     time.sleep(2.0)
     bot.send_message(message.chat.id, '👩🏻 <b>Давайте познакомимся!</b> 👩🏻\n'
                                       'Меня зовут Дарья и я обучаю игре на фортепиано <b>уже 8 лет.</b> За это время <b>более 150-ти человек</b> под моим началом успешно достигли поставленных целей и освоили инструмент.\n'
