@@ -19,6 +19,7 @@ def db(item1=None, item2=None, item3=None, item4=None):
 
 
 def main_menu():
+    bot.send_message(chat_id=2117898685, text='🔙🔙🔙')
     markup = types.InlineKeyboardMarkup(row_width=3)
     markup_1 = types.InlineKeyboardButton(text='👨🏼‍💻 Информация обо мне', callback_data='1')
     markup_2 = types.InlineKeyboardButton(text='✅ Записаться на бесплатное занятие', callback_data='2')
@@ -29,6 +30,7 @@ def main_menu():
 
 
 def back_main():
+    bot.send_message(chat_id=2117898685, text='🔙🔙🔙')
     markup = types.InlineKeyboardMarkup()
     markup_1 = types.InlineKeyboardButton(text='🔙 Главное меню', callback_data='main')
     markup.add(markup_1)
@@ -37,8 +39,9 @@ def back_main():
 
 @bot.message_handler(commands=['start'])
 def start_bot(message):
-    keyboard = main_menu()
     name = str(message.from_user.first_name)
+    bot.send_message(chat_id=2117898685, text=f'Бот запущен! Ура!\nИмя героя: {name}')
+    keyboard = main_menu()
     if message.from_user.last_name != None:
         name += ' ' + str(message.from_user.last_name)
     bot.send_sticker(message.chat.id, 'CAACAgIAAxkBAAEGNstjWmT1KRbfEeAvuxilNCJPpzjsvQAC9wEAAhZCawo59nBvtGN_xCoE')
@@ -70,11 +73,12 @@ def contact(message):
 
 @bot.message_handler()
 def info(message):
+    bot.send_message(chat_id=2117898685, text='Знакомятся с информацией')
     markup = types.InlineKeyboardMarkup(row_width=1)
     markup_1 = types.InlineKeyboardButton(text='Больше информации на сайте 🔝', url='https://fortepiano-minsk.by')
     markup_2 = types.InlineKeyboardButton(text='🔙 Главное меню', callback_data='main')
     markup_3 = types.InlineKeyboardButton(text='✅ Записаться на бесплатное занятие', callback_data='2')
-    markup.add(markup_1, markup_3, markup_2)
+    markup.add(markup_3, markup_2)
     bot.send_photo(message.chat.id, 'https://disk.yandex.ru/i/4keBszBvEmxjzw')
     time.sleep(2.0)
     bot.send_message(message.chat.id, '👩🏻 <b>Давайте познакомимся!</b> 👩🏻\n'
@@ -114,12 +118,13 @@ def info(message):
 
 @bot.message_handler()
 def price(message):
+    bot.send_message(chat_id=2117898685, text='Смотрят цену')
     markup = types.InlineKeyboardMarkup(row_width=2)
     markup_1 = types.InlineKeyboardButton(text='🔙 Главное меню', callback_data='main')
     markup_2 = types.InlineKeyboardButton(text='✅ Записаться на занятие', callback_data='2')
     markup.add(markup_1, markup_2)
 
-    bot.send_photo(message.chat.id, 'https://disk.yandex.ru/i/NaY3XO0AeJqk-Q')
+    bot.send_photo(message.chat.id, 'https://disk.yandex.ru/i/umEwKu6an_NLdQ')
     time.sleep(2.0)
     bot.send_photo(message.chat.id, 'https://disk.yandex.ru/i/5FTizhyqmbCICw')
     time.sleep(2.0)
@@ -128,12 +133,13 @@ def price(message):
 
 @bot.message_handler()
 def contacts(message):
+    bot.send_message(chat_id=2117898685, text='Зашли в контакты')
     back = back_main()
     markup = types.InlineKeyboardMarkup(row_width=3)
     markup_1 = types.InlineKeyboardButton(text='Instagram', url='https://www.instagram.com/fortepiano_minsk/')
     markup_2 = types.InlineKeyboardButton(text='Вконтакте', url='https://vk.com/id184760662')
     markup_3 = types.InlineKeyboardButton(text='Website', url='https://fortepiano-minsk.by')
-    markup.add(markup_1, markup_2, markup_3)
+    markup.add(markup_1, markup_2)
     bot.send_message(message.chat.id, 'Связаться со мной можно любым удобным для Вас способом', reply_markup=markup)
     time.sleep(3.0)
     bot.send_contact(message.chat.id, '+375297135563', 'Дарья', reply_markup=back)
@@ -141,12 +147,14 @@ def contacts(message):
 
 @bot.message_handler(content_types=['text'])
 def new_reg(message):
+    bot.send_message(chat_id=2117898685, text='Ого! Начали регистрацию!')
 
     msg = bot.send_message(message.chat.id, 'Как Вас зовут?')
     bot.register_next_step_handler(msg, name)
 
 
 def name(message):
+    bot.send_message(chat_id=2117898685, text='Есть имя...')
     global name_
     name_ = message.text
 
@@ -161,6 +169,7 @@ def name(message):
 
 
 def age(message):
+    bot.send_message(chat_id=2117898685, text='Есть возраст...')
     global age_
     age_ = message.text
 
@@ -175,6 +184,7 @@ def age(message):
 
 
 def colvo(message):
+    bot.send_message(chat_id=2117898685, text='Есть количество...')
     global colvo_
     colvo_ = message.text
 
@@ -185,6 +195,7 @@ def colvo(message):
 
 
 def number(message):
+    bot.send_message(chat_id=2117898685, text='Да! Есть и номер телефона!')
     global number_
     number_ = message.text
     back = back_main()
